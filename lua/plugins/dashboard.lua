@@ -31,7 +31,16 @@ return {
                     { icon = '󰚰 ', desc = 'Lazy Update', action = 'Lazy update', key = 'L' },
                     { icon = '󰚰 ', desc = 'Mason Update', action = 'MasonUpdate', key = 'M' },
                 },
-                project = { enable = true, limit = 8, icon = ' ', label = 'Recent Projects', action = 'Neotree filesystem reveal current dir=' },
+                project = {
+                    enable = true,
+                    limit = 8,
+                    icon = ' ',
+                    label = 'Recent Projects',
+                    action = function(path)
+                        vim.cmd.cd(path)
+                        vim.cmd('Neotree filesystem reveal current')
+                    end,
+                },
                 footer = {}
             },
         }
