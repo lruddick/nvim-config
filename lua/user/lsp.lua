@@ -1,10 +1,13 @@
 -- LSP Installation and Setup
 local lspconfig = require('lspconfig')
+local default_capabilities = require('cmp_nvim_lsp').default_capabilities()
 require('mason-lspconfig').setup({
     auto_install = true,
     handlers = {
         function(server_name)
-            lspconfig[server_name].setup({})
+            lspconfig[server_name].setup({
+                capabilities = default_capabilities
+            })
         end,
         -- Special Server Configurations below: (server_name = function())
     }
