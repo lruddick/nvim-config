@@ -1,6 +1,8 @@
 return {
     'nvimdev/dashboard-nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    dependencies = {
+        'nvim-tree/nvim-web-devicons',
+    },
     event = 'VimEnter',
 
     config = function()
@@ -26,8 +28,10 @@ return {
                 shortcut = {
                     { icon = '󰋖 ', desc = 'Help', action = 'Telescope help_tags', key = 'h' },
                     { icon = ' ', desc = 'New File', action = 'enew', key = 'n' },
-                    { icon = ' ', desc = 'Find File', action = 'Telescope find_files', key = 'f' },
-                    { icon = '󰙅 ', desc = 'File Tree', action = 'Neotree filesystem reveal current', key = 't' },
+                    { icon = '󰱼 ', desc = 'Find File', action = 'Telescope find_files', key = 'f' },
+                    { icon = '󱎸 ', desc = 'Search', action = 'Telescope live_grep', key = 's' },
+                    { icon = '󰙅 ', desc = 'File Tree', action = 'Neotree filesystem reveal float', key = 't' },
+                    { icon = '󰊢 ', desc = 'Git GUI', action = 'LazyGit', key = 'g' },
                     { icon = '󰚰 ', desc = 'Lazy Update', action = 'Lazy update', key = 'L' },
                     { icon = '󰚰 ', desc = 'Mason Update', action = 'MasonUpdate', key = 'M' },
                 },
@@ -38,7 +42,7 @@ return {
                     label = 'Recent Projects',
                     action = function(path)
                         vim.cmd.cd(path)
-                        vim.cmd('Neotree filesystem reveal current')
+                        vim.cmd('Neotree filesystem reveal float')
                     end,
                 },
                 footer = {}

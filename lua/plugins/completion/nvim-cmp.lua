@@ -1,21 +1,6 @@
 return {
     'hrsh7th/nvim-cmp',
-    dependencies = {
-        { 'hrsh7th/cmp-nvim-lsp' },
-        {
-            'saadparwaiz1/cmp_luasnip',
-            dependencies = {
-                'L3MON4D3/LuaSnip',
-                tag = 'v2.3.0',
-                dependencies = { 'rafamadriz/friendly-snippets' },
-
-                build = 'make install_jsregexp',
-                config = function()
-                    require('luasnip.loaders.from_vscode').lazy_load()
-                end,
-            },
-        },
-    },
+    dependencies = { 'hrsh7th/cmp-nvim-lsp' },
 
     config = function()
         local cmp = require 'cmp'
@@ -40,8 +25,9 @@ return {
                 { name = 'nvim_lsp' },
                 { name = 'luasnip' },
             }, {
-                { name = 'buffer' },
-            }),
+                    { name = 'buffer' },
+                }),
         }
     end,
 }
+

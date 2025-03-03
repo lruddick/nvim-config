@@ -22,7 +22,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Mase sure to setup `mapleader` and `maplocalleader` before loading lazy.nvim
+-- Make sure to setup `mapleader` and `maplocalleader` before loading lazy.nvim
 -- so that mappings are correct.
 -- This is also a good plate to setup other settings (vim.opt)
 
@@ -33,7 +33,7 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup({
     spec = {{ import = "plugins" }},
 
-    -- Configure any other settigns here. See the documentation for mo:re details.
+    -- Configure any other settings here. See the documentation for more details.
     -- colorsheme that will be used when installing plugins,
     install = { colorscheme = { "catppuccin" }, },
 

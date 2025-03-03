@@ -2,7 +2,7 @@ return {
     'kdheepak/lazygit.nvim',
     cmd = {
         'LazyGit',
-        'LazyyGitConfig',
+        'LazyGitConfig',
         'LazyGitCurrentFile',
         'LazyGitFilter',
         'LazyGitFilterCurrentFile',
@@ -12,7 +12,8 @@ return {
 
     keys = {
         { '<leader>lg', '<cmd>LazyGit<CR>', desc = 'LazyGit - Open' },
-        { '<leader>lgc', '<cmd>LazyGitCurrentFile<CR>', desc = 'LazyGit - Current File' },
-        { '<leader>lgf', '<cmd>LazyGitFilter<CR>', desc = 'LazyGit - Filter' },
+        { '<leader>lgc', '<cmd>LazyGitConfig<CR>', desc = 'LazyGit - Edit Config' },
+        { '<leader>lgf', '<cmd>LazyGitCurrentFile<CR>', desc = 'LazyGit - Current File' },
+        { '<leader>lgl', '<cmd>LazyGitFilter<CR>', desc = 'LazyGit - Commit Log' },
     },
 }
