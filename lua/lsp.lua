@@ -21,7 +21,12 @@ null_ls.setup({
         null_ls.builtins.diagnostics.cmake_lint,
         null_ls.builtins.diagnostics.codespell,
         null_ls.builtins.diagnostics.cppcheck,
-        null_ls.builtins.formatting.stylua,
         require('none-ls.diagnostics.cpplint'),
+
+        -- lua
+        null_ls.builtins.formatting.stylua,
+
+        -- markdown
+        null_ls.builtins.diagnostics.markdownlint_cli2,
     }
 })

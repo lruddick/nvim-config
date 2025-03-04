@@ -2,6 +2,7 @@ local current_path = 'plugins.languages.'
 
 local current_list = {
     require(current_path .. 'lua'),
+    require(current_path .. 'markdown'),
 }
 
 local flattened_list = {}

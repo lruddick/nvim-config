@@ -1,4 +1,4 @@
-require('user.auto-mason')
+-- require('user.auto-mason')
 
 -- Personal Editor Settings
 require("catppuccin").setup()

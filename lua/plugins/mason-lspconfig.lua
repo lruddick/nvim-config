@@ -3,7 +3,7 @@ return {
     dependencies = {
         {
             'williamboman/mason.nvim',
-            opts = {}
+            opts = { ensure_installed = mason_required_list }
         },
         {
             'neovim/nvim-lspconfig',
