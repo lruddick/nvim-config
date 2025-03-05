@@ -40,5 +40,3 @@ require("lazy").setup({
     -- enable automatic check for plugin updates
     checker = { enabled = true },
 })
-
-vim.g.user.mason_required = {}

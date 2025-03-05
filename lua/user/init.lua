@@ -1,5 +1,3 @@
--- require('user.auto-mason')
-
 -- Personal Editor Settings
 require("catppuccin").setup()
 vim.cmd.colorscheme "catppuccin"
@@ -21,3 +19,7 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' }, {
     pattern = { '*?.*' },
     command = 'let &colorcolumn = join(range(81,999), ",")',
 })
+
+-- Other User Configuration Options
+require('user.lsp')
+require('user.mason')
