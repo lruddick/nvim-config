@@ -9,9 +9,9 @@ return {
 
     opts = {
         outline_window = {
-            auto_jump = false,
+            auto_jump = true,
             jump_highlight_duration = 500,
-            hide_cursor = true,
+            show_cursorline = false,
         },
         symbol_folding = { autofold_depth = 2 },
         symbols = { icon_source = 'lspkind' },
