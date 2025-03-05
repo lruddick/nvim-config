@@ -10,6 +10,43 @@ require('mason-lspconfig').setup({
             })
         end,
         -- Special Server Configurations below: (server_name = function())
+        clangd = function()
+            local u = require('lspconfig.util')
+            local capabilities = default_capabilities
+            capabilities.offsetEncoding = { 'utf-16' }
+
+            lspconfig.clangd.setup({
+                root_dir = function(fname)
+                    return u.root_pattern(
+                        'Makefile',
+                        'configure.ac',
+                        'configure.in',
+                        'config.h.in',
+                        'meson.build',
+                        'meson_options.txt',
+                        'build.ninja'
+                    )(fname) or u.root_pattern(
+                        'compile_commands.json',
+                        'compile_flags.txt'
+                    )(fname) or u.find_git_ancestor(fname)
+                end,
+                capabilities = capabilities,
+                cmd = {
+                    'clangd',
+                    '--background-index',
+                    '--clang-tidy',
+                    '--header-insertion=iwyu',
+                    '--completion-style=detailed',
+                    '--function-arg-placeholders',
+                    'fallback-style=llvm',
+                },
+                init_options = {
+                    usePlaceholders = true,
+                    completeUnimported = true,
+                    clangdFileStatus = true,
+                },
+            })
+        end,
     }
 })
 

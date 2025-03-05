@@ -6,6 +6,7 @@ u.SmartInstall(require('plugins.languages.mason'))
 
 local languages = {
     'cmake',
+    'clangd',
     'lua',
     'markdown',
 }

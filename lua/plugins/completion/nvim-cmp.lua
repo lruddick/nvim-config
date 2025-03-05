@@ -1,6 +1,9 @@
 return {
     'hrsh7th/nvim-cmp',
-    dependencies = { 'hrsh7th/cmp-nvim-lsp' },
+    dependencies = {
+        'hrsh7th/cmp-nvim-lsp',
+        'p00f/clangd_extensions.nvim',
+    },
 
     config = function()
         local cmp = require 'cmp'
@@ -26,6 +29,20 @@ return {
                 { name = 'luasnip' },
                 { name = 'render-markdown' },
             }, {{ name = 'buffer' }}),
+            sorting = {
+                comparators = {
+                    cmp.config.compare.offset,
+                    cmp.config.compare.exact,
+                    cmp.config.compare.recently_used,
+                    cmp.config.compare.kind,
+                    cmp.config.compare.sort_text,
+                    cmp.config.compare.length,
+                    cmp.config.compare.order,
+
+                    -- clangd specific
+                    require('clangd_extensions.cmp_scores'),
+                },
+            },
         }
     end,
 }

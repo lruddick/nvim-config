@@ -1,6 +1,8 @@
 local current_path = 'plugins.languages.'
 
 local current_list = {
+    require(current_path .. 'clangd'),
+    require(current_path .. 'cmake'),
     require(current_path .. 'lua'),
     require(current_path .. 'markdown'),
 }
