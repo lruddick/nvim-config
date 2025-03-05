@@ -1,0 +1,4 @@
+return {
+    'cmakelang',
+    'cmakelint',
+}
